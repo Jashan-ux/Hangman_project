@@ -47,12 +47,6 @@ else:
 
 
 
-
-
-
-
-
-
 hangman_stages = [
     """
       ------
@@ -119,14 +113,8 @@ hangman_stages = [
     """
 ]
 
-
-
-
-
-
-
 random_word = rm.choice(hangman_words)
-# Create a blanking space
+
 blank_place =""
 for position in range(0,len(random_word)):
     blank_place +="_"
@@ -134,13 +122,13 @@ for position in range(0,len(random_word)):
 
 lives =6
 vowels = "aeiou"
-#step2
+
 correct_letters = []
 game_over = False
 
 display = ""
 for letter in random_word:
-    if letter in vowels:
+    if   letter in vowels:
         display+=letter
           
     else :
@@ -157,13 +145,13 @@ while  not game_over:
             new_display += letter
             correct_letters+=guess
         else:
-            new_display += "_"
+            new_display +=  "_"
     
 
       
 
     print(new_display) 
-    if guess not in random_word:
+    if guess  not in random_word:
         lives-=1
         print(hangman_stages[6 - lives])
         print(f"Lives left :{lives}") 
@@ -179,7 +167,7 @@ while  not game_over:
 
 print(hangman_stages[6-lives])
 if lives==6 :
-    print("You are the Champion.")     
+    print("Hurray! ,You are the Champion.")     
 
 
 
